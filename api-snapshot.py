@@ -23,7 +23,7 @@ def snapshot() -> str:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     spec = (REPO / "spec" / "SPEC_VERSION").read_text(encoding="utf-8").strip()
     entries: set[str] = set()
-    for path in sorted((ROOT / "Sources" / "PraxoCore").glob("*.swift")):
+    for path in sorted((ROOT / "Sources" / "PraxoCore").rglob("*.swift")):
         current = ""
         for raw in path.read_text(encoding="utf-8").splitlines():
             line = raw.strip()
