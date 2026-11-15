@@ -3,7 +3,7 @@
 Swift implementation of the PRAXO-CORE contract.
 
 - `SPEC_VERSION`: `0.2.0`
-- Core version: `0.6.0`
+- Core version: `0.7.0`
 - Tier: core
 - License: MIT
 
@@ -11,14 +11,17 @@ Swift implementation of the PRAXO-CORE contract.
 
 - Registry introduction: [REGISTRY.md](https://github.com/axisvela/praxo-core/blob/main/language/swift/REGISTRY.md)
 - Machine-readable entry: [llms.txt](https://github.com/axisvela/praxo-core/blob/main/language/swift/llms.txt) and [llms.md](https://github.com/axisvela/praxo-core/blob/main/language/swift/llms.md)
+- [Examples](https://github.com/axisvela/praxo-core/tree/main/language/swift/examples): runnable language-specific examples.
 - Coding-agent contract: [docs/getting-started/coding-agents.md](https://github.com/axisvela/praxo-core/blob/main/docs/getting-started/coding-agents.md)
 - Registry: [Swift Package Index](https://swiftpackageindex.com/axisvela/praxo-core-swift)
+- Community: [X](https://x.com/axisvela) · [Weibo](https://weibo.com/u/1936025761)
 
 ## Scope
 
-`0.5.0` implements all eleven conformance vector groups: tool-call parsing, JSON
+`0.6.0` implements all eleven conformance vector groups: tool-call parsing, JSON
 Schema, plugin manifests, memory, events, stream kinds, checkpoint envelopes,
-path policy, context budgets, middleware, and the agent loop. It also includes
+path policy, context budgets, middleware, HITL interrupt decisions, and the
+agent loop. It also includes
 non-streaming OpenAI-compatible, Anthropic, and Gemini model adapters, MCP
 transport seams, Harmovela, OpenTelemetry, retriever, and synchronous delegation
 seams.
@@ -116,6 +119,6 @@ durable queue, or cross-process worker.
 
 ## Release
 
-Tag shape: `swift/v0.5.0`. The tag targets `SPEC_VERSION` `0.2.0`. SPM and
+Tag shape: `swift/v0.7.0`. The tag targets `SPEC_VERSION` `0.2.0`. SPM and
 Swift Package Index consumption require a split repository with root
 `Package.swift` and plain semver tags; see [PUBLISHING.md](PUBLISHING.md).
