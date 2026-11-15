@@ -1,7 +1,7 @@
 # PRAXO-CORE Swift Registry Introduction
 
-**Status:** package list merged. Source version `0.4.0`, source
-tag `swift/v0.4.0`. Published registry version: `0.2.0`. Registry
+**Status:** package list merged. Source version `0.6.0`, source
+tag `swift/v0.6.0`. Published registry version: `0.4.0`. Registry
 pages are release snapshots; verify the published version before relying on a
 feature.
 
@@ -15,21 +15,40 @@ Swift implementation of the PRAXO-CORE contract.
 | --- | --- |
 | Package | `praxo-core-swift` |
 | Registry | [Swift Package Index](https://swiftpackageindex.com/axisvela/praxo-core-swift) |
-| Source version | `0.4.0` |
-| Published registry version | `0.2.0` |
-| Install (published) | `.package(url: "https://github.com/axisvela/praxo-core-swift.git", from: "0.2.0")` |
-| Install (source/release prepared) | `.package(url: "https://github.com/axisvela/praxo-core-swift.git", from: "0.4.0")` |
-| Source tag | `swift/v0.4.0` |
+| Source version | `0.6.0` |
+| Published registry version | `0.4.0` |
+| Install (published) | `.package(url: "https://github.com/axisvela/praxo-core-swift.git", from: "0.4.0")` |
+| Install (source/release prepared) | `.package(url: "https://github.com/axisvela/praxo-core-swift.git", from: "0.6.0")` |
+| Source tag | `swift/v0.6.0` |
 | Tier | Core |
 | Contract | `SPEC_VERSION` `0.2.0` |
 | Documentation | https://axisvela.github.io/praxo-core/languages/swift/ |
 
+## Capabilities and Status
+
+| Adapter | Status | Detail |
+| --- | --- | --- |
+| OpenAI-compatible model | native | `OpenAICompatibleModel` with URLSession transport |
+| Anthropic model | native | `AnthropicModel` with injectable transport |
+| Gemini model | native | `GeminiModel` with injectable transport |
+| MCP client | native | `McpClient`, `StdioMcpTransport`, `HttpMcpTransport`; typechecked locally, full build blocked |
+| Harmovela sink | native | `HarmovelaSink` with URLSession transport |
+| OpenTelemetry sink | native (transport seam) | `OtelSink`; caller supplies `OtelTransport` |
+| Subagent delegation | native (synchronous seam) | `SubagentManager.run`; no asynchronous manager |
+| Retriever | native | `Document`, `FuncRetriever`, `retrieveDocuments` |
+
 ## Coding-agent entry
 
+- [Examples](https://github.com/axisvela/praxo-core/tree/main/language/swift/examples): runnable language-specific examples.
 - [llms.txt](llms.txt): compact machine-readable entry for this language.
 - [llms.md](llms.md): Markdown version of the same entry.
 - [Coding-agent contract](../../docs/getting-started/coding-agents.md): explicit
   scope, final-argument authorization, denial tests, and verification commands.
+
+## Community
+
+- X: <https://x.com/axisvela>
+- Weibo: <https://weibo.com/u/1936025761>
 
 ## Boundaries
 
