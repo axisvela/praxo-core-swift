@@ -2,8 +2,34 @@
 
 Swift implementation of the PRAXO-CORE contract.
 
+## Features
+
+- A native Swift agent loop with tool registration and dispatch.
+- Policy hooks, tool scope, HITL approve/edit/reject/respond decisions, events,
+  memory, checkpoints, and context budgets.
+- OpenAI-compatible, Anthropic, and Gemini adapters over an injectable
+  transport.
+- MCP, OpenTelemetry, Harmovela, retriever, and synchronous delegation seams.
+- XCTest coverage, an API snapshot, and a conformance runner.
+- MIT-licensed and dependency-free.
+
+## Limits
+
+- Core is an execution framework, not a model provider, hosted agent service,
+  crawler, workflow engine, or production sandbox.
+- The split `0.7.2` package is non-streaming. SSE streaming is implemented in
+  the `0.8.0` source and is not yet in this split tag.
+- Checkpoints are recovery hints, not transactions. Core does not provide
+  durable execution, exactly-once effects, or an effect ledger.
+- Provider credentials, authentication, retries, and durable state remain
+  application-owned.
+- Go remains the reference implementation; full Go feature parity is not
+  claimed.
+
+## Package
+
 - `SPEC_VERSION`: `0.2.0`
-- Core version: `0.7.1`
+- Core version: `0.7.2`
 - Tier: core
 - License: MIT
 
@@ -43,7 +69,7 @@ deterministic local checks, not live-provider or production evidence.
 
 ## Scope
 
-`0.7.1` implements all eleven conformance vector groups: tool-call parsing, JSON
+`0.7.2` implements all eleven conformance vector groups: tool-call parsing, JSON
 Schema, plugin manifests, memory, events, stream kinds, checkpoint envelopes,
 path policy, context budgets, middleware, HITL interrupt decisions, and the
 agent loop. It also includes
@@ -54,7 +80,7 @@ seams.
 ## Install
 
 ```swift
-.package(url: "https://github.com/axisvela/praxo-core-swift.git", from: "0.7.1")
+.package(url: "https://github.com/axisvela/praxo-core-swift.git", from: "0.7.2")
 ```
 
 ## Build and test
@@ -144,6 +170,7 @@ durable queue, or cross-process worker.
 
 ## Release
 
-Tag shape: `swift/v0.7.1`. The tag targets `SPEC_VERSION` `0.2.0`. SPM and
+Split package tag: `0.7.2` (plain semver). The monorepo source tag is
+`swift/v0.8.0`; this split package targets `SPEC_VERSION` `0.2.0`. SPM and
 Swift Package Index consumption require a split repository with root
 `Package.swift` and plain semver tags; see [PUBLISHING.md](PUBLISHING.md).

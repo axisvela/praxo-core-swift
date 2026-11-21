@@ -1,5 +1,14 @@
 # Swift Core Release Notes
 
+## 0.7.2 - 2026-11-21
+
+Split package tag `0.7.2`.
+
+### Changed
+
+- Expanded the Swift Package Index README with Features and Limits. No public
+  API or wire change; `SPEC_VERSION` remains `0.2.0`.
+
 ## 0.7.1 - 2026-11-18
 
 Source tag `swift/v0.7.1`; the split repository publishes plain `0.7.1`.
